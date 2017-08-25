@@ -10,11 +10,12 @@
            th:object="${course}"
            method="post">
          <input type="hidden" th:field="*{id}" />
-         Title :<input type="text" th:field="*{title}" />
-         <span th:if="${fields.hasErrors('title')}"
-               th:erors="*{title}"></span><br />
 
-         Instructor :<input type="text" th:field="{*instructor}" />
+         Title :<input type="text" th:field="*{title}" />
+         <span th:if="${#fields.hasErrors('title')}"
+               th:errors="*{title}"></span><br />
+
+         Instructor :<input type="text" th:field="*{instructor}" />
          <span th:if="${#fields.hasErrors('instructor')}"
                th:erors="*{instructor}"></span><br />
 
@@ -22,9 +23,10 @@
          <span th:if="${#fields.hasErrors('description')}"
                th:erors="*{description}"></span><br />
 
-         Credits :<input type="text" th:field="*credit" />
+         Credits :<input type="text" th:field="*{credit}" />
          <span th:if="${#fields.hasErrors('credit')}"
                th:erors="*{credit}"></span><br />
+         <br />
          <input type="submit" value="Submit" />
      </form>
 </body>
